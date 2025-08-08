@@ -8,7 +8,7 @@ function AppContext({children}){
     const [totalPages,setTotalPages]=useState(0);
     const [currentPage,setCurrentPage]=useState(1);
     const [Loading,setLoading]=useState(false);
-const url='https://codehelp-apis.vercel.app/api/get-blogs';
+    const url='https://codehelp-apis.vercel.app/api/get-blogs';
   async  function  fetchBlogs()
     {
         try{
