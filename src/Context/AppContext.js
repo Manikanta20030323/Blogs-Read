@@ -12,9 +12,14 @@ function AppContext({children}){
   async  function  fetchBlogs()
     {
         try{
+            setLoading(true);
             let data=await fetch(`${url}?page=${currentPage}`);
              data=await data.json();
              console.log(data);
+             setPosts(data.posts);
+             setCurrentPage(data.page);
+             setTotalPages(data.totalPages);
+             setLoading(false);
         }
         catch(error)
         {
