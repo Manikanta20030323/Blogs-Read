@@ -4,6 +4,7 @@ import Heading from "./components/Heading";
 import './App.css';
 import {ContextName}  from "./Context/AppContext";
 import Blog from "./components/Blog";
+import Pagination from "./components/Pagination";
 export default function App() {
 
 const  {fetchBlogs,Loading,posts} =useContext(ContextName);
@@ -27,6 +28,9 @@ useEffect(() => {
 
         )
       }
+    </div>
+    <div>
+      <Pagination />
     </div>
   </div>;
 }
