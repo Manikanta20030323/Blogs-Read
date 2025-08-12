@@ -1,0 +1,13 @@
+.title{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.author{
+    font-style:italic;
+}
+.p-data{
+    font-size: 1.1em;
+}
+.tags{
+    color: rgba(59,130,246,.5);
+}

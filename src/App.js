@@ -14,22 +14,21 @@ useEffect(() => {
 
 
   return <div className="App">
-  <div>
-    <Heading className='heading'></Heading>
+
+  <div className="heading-div">
+    <Heading ></Heading>
   </div>
     
 
-    <div>
+    <div className="content-div">
       {
         posts.map((post)=>(
           <Blog post={post} key={post.id}/>
 
-        )
-
-        )
+        ))
       }
     </div>
-    <div>
+    <div className="pagination-wrapper">
       <Pagination />
     </div>
   </div>;
