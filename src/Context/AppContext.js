@@ -1,14 +1,21 @@
+import { useEffect } from "react";
 import { createContext, useState } from "react";
 
- export const ContextName=createContext();
+ export const ContextName = createContext();
 function AppContext({children}){
+    
 
-   
     const [posts,setPosts] = useState([]);
     const [totalPages,setTotalPages]=useState(0);
     const [currentPage,setCurrentPage]=useState(1);
     const [Loading,setLoading]=useState(false);
     const url='https://codehelp-apis.vercel.app/api/get-blogs';
+
+    useEffect(()=>{
+        console.log("namste mani in useeffect ", currentPage)
+        
+        fetchBlogs();
+    },[currentPage])
   async  function  fetchBlogs()
     {
         try{
@@ -20,11 +27,17 @@ function AppContext({children}){
              setCurrentPage(data.page);
              setTotalPages(data.totalPages);
              setLoading(false);
+             
         }
         catch(error)
         {
 
         }
+    }
+    function handlepagenumber(pno)
+    {
+       setCurrentPage(pno)
+   
     }
 
     let val={
@@ -36,7 +49,8 @@ function AppContext({children}){
         setCurrentPage,
         Loading,
         setLoading,
-        fetchBlogs
+        fetchBlogs,
+        handlepagenumber
     }
     return(
         <ContextName.Provider value={val}>

@@ -3,34 +3,32 @@ import { ContextName } from "../Context/AppContext";
 import './pagination.css'
 function Pagination()
 {
-    const  {fetchBlogs,totalPages,currentPage,setCurrentPage} =useContext(ContextName);
-  
+    const  {totalPages,currentPage,handlepagenumber} =useContext(ContextName);
+   
     return(
         <div className="pagination-container">
             <div className="butt-div">
                 <button onClick={()=>{
+                    handlepagenumber(6);
                     
                     let curPage=(currentPage-1);
-                    console.log("hi , i came to previos button",currentPage);
+                  
                     if(curPage===0)
                     {
                         curPage=totalPages;
                     }
-                    setCurrentPage(curPage);
-                     fetchBlogs();
-                     console.log("cur page is ",curPage)
-                     console.log("prev page iss",currentPage);
+                   
+                     handlepagenumber(curPage);
                 }} className="button">Previous</button>
                 <button onClick={()=>{
-                    console.log("hi , i came to next button");
+                    
                     let curPage=(currentPage+1);
                     if(curPage>totalPages)
                     {
                         curPage=curPage%totalPages;
                     }
-                    setCurrentPage(curPage);
-                    console.log("next page iss",currentPage);
-                    fetchBlogs();
+                  
+                    handlepagenumber(curPage);
                 }} className="button">Next</button>
             </div>
             <div className="page-no">
