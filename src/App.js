@@ -19,7 +19,8 @@ useEffect(() => {
   <div className="heading-div">
     <Heading></Heading>
   </div>
-    {
+  <div className="content-container">
+     {
       Loading ? (<Load></Load>):(
         <div className="content-div">
       {
@@ -29,9 +30,11 @@ useEffect(() => {
         ))
       }
     </div>
-      )
-    }
- 
+    )
+  }
+  </div>
+   
+
     
     <div className="pagination-wrapper">
       <Pagination />

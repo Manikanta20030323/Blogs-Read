@@ -35,15 +35,19 @@ body {
 }
 .content-div{
     width: 950px;
-    display: flex;
+     display: flex;
     flex-direction: column;
     gap: 15px;
-    position: relative;
-    /* bottom: 100px;
-    top: 100px; */
-    margin-top: 100px;
-    margin-bottom: 100px;
+
+  
     
+    
+}
+.content-container{
+
+overflow-y: scroll;
+ margin-top: 100px;
+   margin-bottom: 100px;
 }
 .heading-div{
     width: 100%;
