@@ -13,7 +13,7 @@ function AppContext({children}){
 
     useEffect(()=>{
         console.log("namste mani in useeffect ", currentPage)
-        
+        console.log("working properly");
         fetchBlogs();
     },[currentPage])
   async  function  fetchBlogs()
